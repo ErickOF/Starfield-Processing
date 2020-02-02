@@ -11,7 +11,7 @@ class Star {
     this.initRandomPosition();
     this.starColor = 255;
     this.starRadio = 8;
-    this.speed = 10;
+    this.speed = 25;
   }
   
   private void initRandomPosition() {
@@ -51,6 +51,9 @@ class Star {
     // Draw light trail
     stroke(255);
     line(px, py, sx, sy);
+
+    // Update previous z
+    this.pz = this.z;
 
     // Draw star
     ellipse(sx, sy, r, r);
